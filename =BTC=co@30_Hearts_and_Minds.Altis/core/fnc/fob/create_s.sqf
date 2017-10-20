@@ -8,7 +8,10 @@ _pos = getPos _mat;
 deleteVehicle _mat;
 
 _struc = createVehicle [btc_fob_structure, [_pos select 0,_pos select 1,-10], [], 0, "NONE"];
+//_struc setVariable ["ace_medical_isMedicalFacility", true, true];
 _flag  = createVehicle [btc_fob_flag, _pos, [], 0, "NONE"];
+//_flag addAction ["<t color='#ff1111'>Arsenal</t>", "['Open',true] spawn BIS_fnc_arsenal;"];
+
 
 _h = - 10;
 while {_h < 0} do {
@@ -29,6 +32,9 @@ _marker = createmarker [("FOB " + _name), getPos _flag];
 (btc_fobs select 1) pushBack _struc;
 _flag setVariable ["btc_fob",("FOB " + _name)];
 [7,("FOB " + _name)] remoteExec ["btc_fnc_show_hint", 0];
+//[btc_fob, "<t color='#000000'>Return to Base</t>", {execVM "butts\teleport_home.sqf"}] remoteExec ["AddAction", 0];
+
+
 
 /*
 //_flag setVariable ["BTC_mobile_west",format ["FOB_%1",BTC_fob_id],true];
