@@ -21,7 +21,7 @@ if (count _houses > 0) then {
 	_houses = _houses - [_house];
 };
 
-for "_i" from 1 to 4 do {
+for "_i" from 1 to 3 do {
 	private "_wp_pos";
 	_wp_pos = [_pos, _radius] call btc_fnc_randomize_pos;
 	_wp = _group addWaypoint [_wp_pos, 0];
