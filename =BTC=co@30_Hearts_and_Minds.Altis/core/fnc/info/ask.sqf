@@ -10,13 +10,13 @@ if !(_man call ace_medical_fnc_isInStableCondition) exitWith {
 	_complain = switch _random do {
 		case 0 : {"Help me!"};
 		case 1 : {"I am suffering!"};
-		case 2 : {"Injure!"};
+		case 2 : {"I'm hurt!"};
 		case 3 : {"I have open wound!"};
 	};
 	hint format ["%1 %2", name _man, _complain];
 };
 
-if ((!isNil {_man getVariable "btc_already_asked"}) || (_man getVariable ["btc_already_interrogated",false])) exitWith {hint format ["%1 I already answered to your question!", name _man];};
+if ((!isNil {_man getVariable "btc_already_asked"}) || (_man getVariable ["btc_already_interrogated",false])) exitWith {hint format ["%1 I already told you what I know!", name _man];};
 
 if ((round random 3) >= 2 || !_isInterrogate) then {
 	_man setVariable ["btc_already_asked",true];
