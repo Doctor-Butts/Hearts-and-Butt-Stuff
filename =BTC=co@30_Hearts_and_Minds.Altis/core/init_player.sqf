@@ -1,5 +1,6 @@
 
 [] execVM "core\doc.sqf";
+[] execVM "butts\b_doc.sqf";
 
 [] spawn {
 	waitUntil {!isNull player};
