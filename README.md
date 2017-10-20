@@ -21,6 +21,9 @@ The mission has been changed to add a lot of features, and to help with focusing
 <br>Spawn an autonomous MG, GMG, or Praetor
 <br>A 5 minute repair/rearm option for vehicles that don't support the BAF Servicing menu (RHS stuff)
 
+<b>More FOB Options</b>
+<br>Additional interactions have been added to the FOB flag. You can redeploy to another base, access the arsenal, or teleport home. Note: Teleport home has a cooldown of 10 minutes.
+
 <b>Different Starting Vehicles</b>
 <br>Some vehicles have been changed around, while others have been added.
 <br>Added vehicles: Zodiac Boat, Submarine, RHS Marine boat, M1A2 SEP Tank, A-164 wipeout/A-10D Thunderbolt II
@@ -34,4 +37,5 @@ The mission has been changed to add a lot of features, and to help with focusing
 <br><b>Triggers have been added that will fail the mission if the rep value is -500</b>. This is to prevent people from just going hog wild, and the consequences for low rep in original mission didn't seem severe enough.<br>
 <br>The default faction is IRAN<br>
 <br>Some modules have been added or changed: ACE pointing distance increased to 30m, ACE_hearing all but disabled.<br>
+<br>Medical Center added to Base: This upgrades medical training of everyone, so that people can be medevaced to base for triage- essentially, regular soldiers can use bloodbags on each other to recover from a mission.
 
