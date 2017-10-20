@@ -1,7 +1,7 @@
 
 private ["_p_civ_veh","_p_db","_p_en","_hideout_n","_cache_info_def","_cache_info_ratio","_info_chance","_p_rep","_p_skill","_c_array","_tower","_array","_chopper","_p_civ","_btc_rearming_vehicles","_vehicles","_magazines","_p_city_radius","_magazines_static","_static","_btc_rearming_static","_magazines_clean","_weapons_usefull","_magazines_static_clean","_p_en_AA"];
 
-btc_version = 1.17; diag_log format ["=BTC= HEARTS AND MINDS VERSION %1",(str(btc_version) + ".2")];
+btc_version = 1.17; diag_log format ["Hearts and Butt Stuff %1",(str(btc_version) + ".1")];
 
 //Param
 
@@ -159,8 +159,8 @@ if (isServer) then {
 	btc_type_cord = ["Land_ExtensionCord_F"];
 
 	//Vehs
-	btc_vehicles = [btc_veh_1,btc_veh_2,btc_veh_3,btc_veh_4,btc_veh_5,btc_veh_6,btc_veh_7,btc_veh_8,btc_veh_9,btc_veh_10,btc_veh_11,btc_veh_12,btc_veh_13,btc_veh_14,btc_veh_15];
-	btc_helo = [btc_helo_1];
+	btc_vehicles = [btc_veh_1,btc_veh_2,btc_veh_3,btc_veh_4,btc_veh_5,btc_veh_6,btc_veh_7,btc_veh_8,btc_veh_9,btc_veh_10,btc_veh_11,btc_veh_12,btc_veh_13,btc_veh_14,btc_veh_15,btc_veh_16,btc_veh_17,btc_veh_18];
+	btc_helo = [btc_helo_1,btc_boat_1,btc_boat_2,btc_boat_3];
 
 	// The two arrays below are prefixes of buildings and their multiplier.
 	// They will multiply the values of btc_rep_malus_building_destroyed and btc_rep_malus_building_damaged,
@@ -207,7 +207,7 @@ _allclasse = [[_p_civ_veh]] call btc_fnc_civ_class;
 btc_civ_type_veh = _allclasse select 2;
 btc_civ_type_boats = _allclasse select 1;
 
-btc_civ_max_veh = 10;
+btc_civ_max_veh = 15;
 btc_w_civs = ["V_Rangemaster_belt","arifle_Mk20_F","30Rnd_556x45_Stanag","hgun_ACPC2_F","9Rnd_45ACP_Mag"];
 btc_g_civs = ["HandGrenade","MiniGrenade","ACE_M84","ACE_M84"];
 
@@ -277,6 +277,7 @@ if (isServer) then {
 	[
 		[
 			"Fortifications",
+			"Lights",
 			"Static",
 			"Ammobox",
 			"Containers",
@@ -297,6 +298,10 @@ if (isServer) then {
 				"Land_HBarrier_3_F",
 				"Land_HBarrier_5_F",
 				"Land_HBarrierBig_F",
+				"Land_HBarrierWall6_F",
+				"Land_HBarrierWall_corner_F",
+				"Land_HBarrierWall4_F",
+				"Land_HBarrierWall_corridor_F",
 				"Land_Razorwire_F",
 				"Land_CncBarrier_F",
 				"Land_CncBarrierMedium_F",
@@ -306,20 +311,47 @@ if (isServer) then {
 				"Land_Mil_ConcreteWall_F",
 				"Land_Mil_WallBig_4m_F",
 				"Land_Mil_WallBig_Corner_F",
+				"Land_Cargo_House_V1_F",
+				"Land_PierLadder_F",
+				"Land_Obstacle_Bridge_F",
+				"Land_Obstacle_Ramp_F"
+			],
+			[
+				//"Lights"
+				"Land_LampHalogen_F",
+				"Land_LampHarbour_F",
 				"Land_PortableLight_double_F",
-				"Land_Pod_Heli_Transport_04_medevac_black_F",
-				"B_Slingload_01_Fuel_F"
+				"PortableHelipadLight_01_white_F",
+				"Land_Camping_Light_F",
+				"RoadCone_L_F",
+				"RoadBarrier_small_F"
 			],
 			_btc_rearming_static + _magazines_static_clean,
 			[
 				//"Ammobox"
-				"Land_WoodenBox_F"
-
-			] + (_allclass select {_x isKindOf "ReammoBox_F" && !(_x isKindOf "Slingload_01_Base_F") && !(_x isKindOf "Pod_Heli_Transport_04_base_F")}),
+				"rhsusf_weapons_crate",
+				"Box_NATO_AmmoVeh_F",
+				"Land_WoodenBox_F",
+				"rhsusf_mags_crate",
+				"rhsusf_launcher_crate",
+				"rhsusf_gear_crate",
+				"Box_NATO_Ammo_F",
+				"Box_NATO_Support_F",
+				"Box_NATO_Equip_F",
+				"Box_NATO_Wps_F",
+				"Box_NATO_AmmoOrd_F",
+				"Box_NATO_WpsLaunch_F",
+				"Box_NATO_WpsSpecial_F",
+				"ACE_medicalSupplyCrate_advanced",
+				"ACE_medicalSupplyCrate",
+				"B_supplyCrate_F",
+				"B_CargoNet_01_ammo_F"
+			],
 			[
 				//"Containers"
 				"Land_Cargo20_military_green_F",
 				"Land_Cargo40_military_green_F"
+
 			],
 			[
 				//"Supplies"
@@ -351,14 +383,14 @@ if (isServer) then {
 };
 
 _c_array = btc_construction_array select 1;
-btc_log_def_draggable = (_c_array select 1) + (_c_array select 2);
-btc_log_def_loadable = (_c_array select 0) + (_c_array select 1) + (_c_array select 2) + (_c_array select 3) + (_c_array select 4) + (_c_array select 5) + (_c_array select 6) + (["ace_rearm_defaultCarriedObject", "ace_rearm_Bo_Mk82","ace_rearm_Bomb_04_F","ace_rearm_Bo_GBU12_LGB","ace_rearm_Bomb_03_F","ace_rearm_Missile_AA_03_F","ace_rearm_Missile_AGM_02_F","ace_rearm_Missile_AGM_01_F","ace_rearm_Rocket_03_AP_F","ace_rearm_R_80mm_HE","ace_rearm_R_60mm_HE","ace_rearm_Rocket_04_HE_F","ace_rearm_R_Hydra_HE","ace_rearm_Missile_AA_04_F","ace_rearm_M_PG_AT","ace_rearm_R_230mm_HE","ace_rearm_Rocket_03_HE_F","ace_rearm_Rocket_04_AP_F","ace_rearm_R_230mm_fly"]);
+btc_log_def_draggable = (_c_array select 1) + (_c_array select 2) + (_c_array select 7);
+btc_log_def_loadable = (_c_array select 0) + (_c_array select 1) + (_c_array select 2) + (_c_array select 3) + (_c_array select 4) + (_c_array select 5) + (_c_array select 6) + (_c_array select 7) + (["ace_rearm_defaultCarriedObject", "ace_rearm_Bo_Mk82","ace_rearm_Bomb_04_F","ace_rearm_Bo_GBU12_LGB","ace_rearm_Bomb_03_F","ace_rearm_Missile_AA_03_F","ace_rearm_Missile_AGM_02_F","ace_rearm_Missile_AGM_01_F","ace_rearm_Rocket_03_AP_F","ace_rearm_R_80mm_HE","ace_rearm_R_60mm_HE","ace_rearm_Rocket_04_HE_F","ace_rearm_R_Hydra_HE","ace_rearm_Missile_AA_04_F","ace_rearm_M_PG_AT","ace_rearm_R_230mm_HE","ace_rearm_Rocket_03_HE_F","ace_rearm_Rocket_04_AP_F","ace_rearm_R_230mm_fly"]);
 btc_log_def_can_load = (_c_array select 3);
-btc_log_def_placeable = (_c_array select 0) + (_c_array select 3) + (_c_array select 4) + (_c_array select 5);
+btc_log_def_placeable = (_c_array select 0) + (_c_array select 1) + (_c_array select 2) + (_c_array select 3) + (_c_array select 4) + (_c_array select 5) + (_c_array select 6) + (_c_array select 7);
 btc_log_max_distance_load = 15;
 btc_log_object_selected = objNull;
 btc_log_vehicle_selected = objNull;
-btc_log_placing_max_h = 12;
+btc_log_placing_max_h = 15;
 btc_log_placing = false;
 btc_log_obj_created = [];
 
@@ -430,13 +462,13 @@ btc_fnc_log_get_nottowable = {
 	private _tower = _this select 0;
 	switch (true) do {
 		//The tower is a tank so it can't tow: plane and helicopter
-		case (_tower isKindOf "Tank") : {["Plane","Helicopter"];};
-		case (_tower isKindOf "Truck_F") : {["Plane","Helicopter"];};
-		case (_tower isKindOf "Truck") : {["Plane","Helicopter"];};
+		case (_tower isKindOf "Tank") : {["Plane"];};
+		case (_tower isKindOf "Truck_F") : {[""];};
+		case (_tower isKindOf "Truck") : {["Plane","Helicopter","Tank"];};
 		case (_tower isKindOf "Ship") : {["Car","Truck","Truck_F","Tank","Plane","Helicopter"];};
 		//The tower is a car so it can't tow: truck, tank, plane and helicopter
-		case (_tower isKindOf "Car") : {["Truck","Truck_F","Tank","Plane","Helicopter"];};
-		default {["Car","Truck","Truck_F","Tank","Plane","Helicopter","Ship"];};
+		case (_tower isKindOf "Car") : {["Truck_F","Tank","Plane","Helicopter"];};
+		case (_tower isKindOf "Plane") : {["Truck_F","Tank","Plane","Helicopter","Car","Truck","Ship"];};
 	};
 };
 
@@ -446,31 +478,29 @@ btc_fnc_log_get_liftable = {
 	_array   = [];
 	switch (typeOf _chopper) do	{
 		//MH9
-		case "B_Heli_Light_01_F"     : {_array = ["Motorcycle","ReammoBox","ReammoBox_F","Quadbike_01_base_F","Strategic"];};
+		case "RHS_MELB_AH6M_L"     : {_array = ["Motorcycle","ReammoBox","ReammoBox_F","Quadbike_01_base_F","Strategic"];};
 		//PO-30
 		case "O_Heli_Light_02_F"     : {_array = ["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car"];};
 
-		case "RHS_UH1Y_d" : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Wheeled_APC_F","Air","Ship"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
+		case "RHS_UH60M" : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Wheeled_APC","C_Rubberboat","C_Boat_Civil_01_F","C_Boat_Civil_01_rescue_F","C_Boat_Civil_01_police_F","C_Boat_Transport_02_F","C_Scooter_Transport_01_F","B_SDV_01_F","Boat"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5) + ((btc_construction_array select 1) select 6);};
 
 		//UH80
-		case "B_Heli_Transport_01_F" : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Wheeled_APC_F","Air","Ship"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
+		case "B_Heli_Transport_01_F" : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Wheeled_APC","Air","Ship"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
 		//UH80 - CAMO
-		case "B_Heli_Transport_01_camo_F" : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Wheeled_APC_F","Air","Ship"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
+		case "B_Heli_Transport_01_camo_F" : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Wheeled_APC","Air","Ship"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
 		//CH49
-		case "I_Heli_Transport_02_F" : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Wheeled_APC_F","Tracked_APC","APC_Tracked_01_base_F","APC_Tracked_02_base_F","Air","Ship","Tank"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
+		case "I_Heli_Transport_02_F" : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Wheeled_APC","Tracked_APC","APC_Tracked_01_base_F","APC_Tracked_02_base_F","Air","Ship"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
 
-		case "RHS_CH_47F_10" : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Wheeled_APC_F","Tracked_APC","APC_Tracked_01_base_F","APC_Tracked_02_base_F","Air","Ship","Tank"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
-
-		case "B_SDV_01_F" : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Wheeled_APC_F","Tracked_APC","APC_Tracked_01_base_F","APC_Tracked_02_base_F","Air","Ship","Tank"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
+		case "RHS_CH_47F_10" : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Wheeled_APC","Air","Ship","Boat"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5) + ((btc_construction_array select 1) select 6);};
 
 		default {
 			private ["_MaxCargoMass"];
 			_MaxCargoMass = getNumber (configFile >> "CfgVehicles" >> typeOf _chopper >> "slingLoadMaxCargoMass");
 			switch (true) do {
 				case (_MaxCargoMass  <= 500) : {_array = ["Motorcycle","ReammoBox","ReammoBox_F","Quadbike_01_base_F","Strategic"];};
-				case (_MaxCargoMass  <= 4100) : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck_F","Truck","Wheeled_APC_F","Air","Ship"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
-				case (_MaxCargoMass  <= 14000) : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck_F","Truck","Wheeled_APC_F","Tracked_APC","APC_Tracked_01_base_F","APC_Tracked_02_base_F","Air","Ship","Tank"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
-				default {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Truck_F","Wheeled_APC","Tracked_APC","APC_Tracked_01_base_F","APC_Tracked_02_base_F","Air","Ship","Tank"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
+				case (_MaxCargoMass  <= 4100) : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck_F","Truck","Wheeled_APC","C_Rubberboat","C_Boat_Civil_01_F","C_Boat_Civil_01_rescue_F","C_Boat_Civil_01_police_F","C_Boat_Transport_02_F","C_Scooter_Transport_01_F","B_SDV_01_F","Boat"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
+				case (_MaxCargoMass  <= 14000) : {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck_F","Truck","Wheeled_APC","Tracked_APC","APC_Tracked_01_base_F","APC_Tracked_02_base_F","Air","Ship"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5) + ((btc_construction_array select 1) select 6);};
+				default {_array = (["Motorcycle","ReammoBox","ReammoBox_F","StaticWeapon","Car","Truck","Truck_F","Wheeled_APC","Tracked_APC","APC_Tracked_01_base_F","APC_Tracked_02_base_F","Air","Ship","Tank","Land_Cargo20_blue_F"]) + ((btc_construction_array select 1) select 3) + ((btc_construction_array select 1) select 4) + ((btc_construction_array select 1) select 5);};
 			};
 		};
 	};
@@ -478,9 +508,9 @@ btc_fnc_log_get_liftable = {
 };
 
 btc_ropes_deployed = false;
-btc_lift_min_h  = 7;
-btc_lift_max_h  = 12;
-btc_lift_radius = 3;
+btc_lift_min_h  = 2;
+btc_lift_max_h  = 15;
+btc_lift_radius = 4;
 btc_lift_HUD_x  = 0.874;
 btc_lift_HUD_y  = 0.848;
 
@@ -537,7 +567,7 @@ switch (_p_en) do {
 
 //Rep
 btc_rep_bonus_cache = 100;
-btc_rep_bonus_civ_hh = 3;
+btc_rep_bonus_civ_hh = 5;
 btc_rep_bonus_disarm = 25;
 btc_rep_bonus_hideout = 200;
 btc_rep_bonus_mil_killed = 0.25;
@@ -546,9 +576,14 @@ btc_rep_malus_civ_hd = - 10;
 btc_rep_malus_civ_killed = - 10;
 btc_rep_malus_civ_firenear = - 5;
 btc_rep_malus_player_respawn = - 10;
-btc_rep_malus_veh_killed = - 25;
-btc_rep_malus_building_damaged = - 2.5;
+btc_rep_malus_veh_killed = - 20;
+btc_rep_malus_building_damaged = - 1;
 btc_rep_malus_building_destroyed = - 5;
+
+//butts specific stuff
+tp_cooldown = 0;
+[] execVM "butts\pad_lights.sqf";
+
 
 //Side
 if (isNil "btc_side_assigned") then {btc_side_assigned = false;};
