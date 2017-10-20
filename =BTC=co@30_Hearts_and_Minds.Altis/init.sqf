@@ -2,6 +2,7 @@ enableSaving [false,false];
 //Server
 call compile preprocessFile "core\fnc\compile.sqf";
 
+
 if (hasInterface) then {btc_intro_done = [] spawn btc_fnc_intro;};
 
 call compile preprocessFile "core\def\mission.sqf";
@@ -20,3 +21,5 @@ if (!isDedicated && hasInterface) then {
 if (!isDedicated && !hasInterface) then {
 	call compile preprocessFile "core\init_headless.sqf";
 };
+
+call compile preprocessFile "butts\b_compile.sqf";
