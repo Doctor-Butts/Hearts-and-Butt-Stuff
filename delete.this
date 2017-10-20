@@ -11,3 +11,4 @@ sleep 3;
 	_airframe1 = [getpos btc_create_object_point, 0, "B_GMG_01_A_F", _crew1] call BIS_fnc_spawnVehicle;
 } else {
 hint "You need to be an Engineer to request this!"};
+asdf
