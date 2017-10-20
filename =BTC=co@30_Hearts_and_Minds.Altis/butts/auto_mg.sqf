@@ -8,6 +8,6 @@ if (count _near_create_point > 1) exitWith {hint "Too many vehicles found near R
 hint "Building an Autonomous MG";
 sleep 3;
 	_crew1 = creategroup WEST;
-	_airframe1 = [getpos btc_create_object_point, 0, "B_GMG_01_A_F", _crew1] call BIS_fnc_spawnVehicle;
+	_airframe1 = [getpos btc_create_object_point, 0, "B_HMG_01_A_F", _crew1] call BIS_fnc_spawnVehicle;
 } else {
 hint "You need to be an Engineer to request this!"};
