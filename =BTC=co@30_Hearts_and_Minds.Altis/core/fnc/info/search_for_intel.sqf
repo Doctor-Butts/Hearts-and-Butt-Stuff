@@ -6,3 +6,6 @@ waitUntil {!(isNil "btc_int_action_result")};
 if (btc_int_action_result) then {
 	[_this,player] remoteExec ["btc_fnc_info_has_intel", 2];
 };
+
+sleep 5;
+deleteVehicle _this;
