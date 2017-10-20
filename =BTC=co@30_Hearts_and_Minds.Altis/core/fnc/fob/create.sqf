@@ -1,42 +1,24 @@
 
-private ["_mat","_name","_array_markers","_name_to_check"];
+private ["_type","_pos","_dir","_active","_wreck","_ied"];
+_pos = _this select 0;
+_type = _this select 1;
+_dir = _this select 2;
+_active = _this select 3;
 
-if (count ((position _this) isflatempty [1,0,0.9,1,0,false,_this]) == 0) exitWith {hint "Area is not flat enough!"};
+if (btc_debug_log) then {diag_log format ["CREATE IED %1",_this];};
+_wreck = createSimpleObject [_type, _pos];
+_wreck addEventHandler ["HandleDamage",{0}];
+_wreck setPosATL [ _pos select 0, _pos select 1, 0];
+_wreck setDir _dir;
+_wreck setVectorUp surfaceNormal _pos;
 
-if (_this distance (getMarkerPos "btc_base") < 100) exitWith {hint "Too close at the main base!"};
 
-if ({!(_x isKindOf "ace_fastroping_helper")} count (nearestObjects [position _this, ["LandVehicle","Air"], 10]) > 0) exitWith {
-	hint format ["Clear the area before mounting the FOB, %1", (nearestObjects [position _this, ["LandVehicle","Air"], 10]) apply {typeof _x}]
+if (_active) then {
+	_ied = createMine [selectRandom btc_type_ieds_ace,[_pos select 0, _pos select 1, -0.07],[],2];
+	_ied setVectorUp surfaceNormal _pos;
+	[_wreck,_ied] call btc_fnc_ied_fired_near;
+} else {
+	_ied = objNull;
 };
 
-closeDialog 0;
-
-_mat = _this;
-
-btc_fob_dlg = false;
-
-createDialog "btc_fob_create";
-
-waitUntil {dialog};
-
-while {!btc_fob_dlg} do
-{
-	if !(dialog) then {hint "Do not close the dialog with esc";createDialog "btc_fob_create";};
-	sleep 0.1;
-};
-
-if (ctrlText 777 == "") exitWith {closeDialog 0;hint "Name your FOB!";_mat spawn btc_fnc_fob_create;};
-
-_name = ctrlText 777;
-
-_name_to_check = ("FOB " + (toUpper(_name)));
-_array_markers = [];
-{private "_n";_n = toUpper(_x);_array_markers pushBack _n;} foreach allMapMarkers;
-
-if (_array_markers find _name_to_check >= 0) exitWith {closeDialog 0;hint "Name already in use!";_mat spawn btc_fnc_fob_create;};
-
-hint "Get back! Mounting FOB";
-
-closeDialog 0;
-
-[_mat,_name] remoteExec ["btc_fnc_fob_create_s", 2];
+[_wreck,_type,_ied]
