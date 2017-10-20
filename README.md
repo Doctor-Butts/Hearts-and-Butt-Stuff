@@ -31,6 +31,8 @@ The mission has been changed to add a lot of features, and to help with focusing
 <br>Boats are respawnable like the Chinook.
 
 <b>All of the other changes I can remember:</b>
+<br>Base has been moved to the Military area of Altis Airport. Since there are more vehicles, and planes that need a runway, the base has been moved.<br>
+<br>A lightpoint script has been attached to some base objects. This is so that the area is well-lit at night<br>
 <br>Large Trucks (HEMMT) can tow planes and helicopters: There are situations that a wreck is inaccessible because a helicopter would crash into surroundings. This lets a HEMMT move these vehicles around, or Taxi them.<br>
 <br>More civilians will spawn in cities, to hopefully offset performance cost, one of their waypoints have been removed<br>
 <br>Asking for reputation will display the numerical rep value as well. This is important because....<br>
