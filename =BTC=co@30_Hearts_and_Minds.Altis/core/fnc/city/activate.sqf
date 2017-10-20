@@ -90,7 +90,7 @@ if (count _data_units > 0) then {
 			case "Airport" : {1.5};
 			default {1};
 			});
-		_n = 3 * _factor;
+		_n = 4 * _factor;
 		[_city,(_radius/3),_n] call btc_fnc_civ_populate;
 	};
 };
