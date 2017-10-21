@@ -1,8 +1,8 @@
 
-loadScreen = "core\img\btc.paa";
-author = Giallustio;
-onLoadName = Hearts and Minds;
-onLoadMission = www.blacktemplars.altervista.org;
+loadScreen = "core\img\brave.jpg";
+author = Giallustio, Vdauphin edit by Doctor Butts;
+onLoadName = Hearts and Butt Stuff;
+onLoadMission = Modified, obviously;
 
 #include "core\def\dlg_def.hpp"
 
@@ -33,3 +33,14 @@ class RscTitles {
 #include "core\def\functions.hpp"
 
 #include "core\fnc\eh\extended_InitPost_EH.hpp"
+
+class CfgDebriefing
+{  
+	class End3
+	{
+		title = "Mission Failure";
+		subtitle = "Reputation Too Low";
+		description = "Your blatant disregard for citizens has caused them all to unite under the Oplitas. There is no hope to turn it around now.";
+		//pictureBackground = "media\deadfood.jpg";
+	};
+};

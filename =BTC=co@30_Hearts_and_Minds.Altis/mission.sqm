@@ -8,7 +8,7 @@ class EditorData
 	toggles=514;
 	class ItemIDProvider
 	{
-		nextID=634;
+		nextID=636;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15580.578,659.83826,16839.527};
+		pos[]={15405.011,283.37411,17065.719};
 		dir[]={-0.62634289,-0.6699087,0.39895403};
 		up[]={-0.56514519,0.74226421,0.35997459};
 		aside[]={0.53728712,-1.299195e-006,0.84352881};
@@ -433,24 +433,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -465,6 +447,24 @@ class CustomAttributes
 						};
 					};
 					value=1;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -11534,38 +11534,39 @@ class Mission
 		class Item159
 		{
 			dataType="Trigger";
-			position[]={15215.298,17.829819,17201.414};
-			class Attributes
-			{
-				name="failure_warning";
-				condition="call{btc_global_reputation < -500}";
-				onActivation="call{hint ""Your reputation is too low. Get your reputation past the failure threshold within 20 minutes or the mission will be failed.""}";
-				onDeactivation="call{hint ""Your reputation is above the failure threshold""}";
-				sizeA=0;
-				sizeB=0;
-				repeatable=1;
-			};
-			id=632;
-			type="EmptyDetector";
-			atlOffset=-1.9073486e-006;
-		};
-		class Item160
-		{
-			dataType="Trigger";
-			position[]={15240.525,17.476105,17184.965};
+			position[]={15256.013,17.931549,17192.215};
 			class Attributes
 			{
 				name="failed_mission";
 				condition="call{btc_global_reputation < -500}";
-				onActivation="call{hint ""failed due to reputation""; ""EveryoneLost"" call BIS_fnc_endMissionServer;}";
+				onActivation="call{""failed due to reputation"" remoteExec [""hint""]; ""End3"" call BIS_fnc_endMissionServer;}";
 				sizeA=0;
 				sizeB=0;
 				timeout[]={1200,1200,1200};
 				interuptable=1;
-				type="LOOSE";
+				type="END3";
 			};
-			id=633;
+			id=634;
 			type="EmptyDetector";
+			atlOffset=0.375;
+		};
+		class Item160
+		{
+			dataType="Trigger";
+			position[]={15230.785,17.718491,17208.664};
+			class Attributes
+			{
+				name="failure_warning";
+				condition="call{btc_global_reputation < -500}";
+				onActivation="call{""Your reputation is too low. Get your reputation above the failure threshold within 20 minutes or the mission will be failed."" remoteExec [""hint""];}";
+				onDeactivation="call{""Your reputation is above the failure threshold"" remoteExec [""hint""];}";
+				sizeA=0;
+				sizeB=0;
+				repeatable=1;
+			};
+			id=635;
+			type="EmptyDetector";
+			atlOffset=-0.08300209;
 		};
 	};
 	class Connections
