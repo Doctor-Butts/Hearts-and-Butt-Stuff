@@ -30,7 +30,8 @@ switch (true) do {
 	case (_rep >= 750) : {_info_type = "high";};
 };
 
-_info_num = missionNamespace getVariable "btc_global_reputation";
+//_info_num = missionNamespace getVariable "btc_global_reputation";
+//_info_num == btc_global_reputation;
 
 _chance = (random 100);
 switch (true) do {
@@ -39,4 +40,4 @@ switch (true) do {
 	case (_chance >= 60) : {_text = format ["My name is %1 and I think your reputation is", name _man];};
 };
 
-hint format ["%1 %2 (%4). %3", _text, _info_type, _ho_left, _info_num];
+hint format ["%1 %2 (%4). %3", _text, _info_type, _ho_left, btc_global_reputation];
