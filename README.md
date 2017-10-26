@@ -1,44 +1,314 @@
-This is a modification of gameplay that tries to keep pace with the updates in the original mission.
-<br><br>
-<b>NOTE: THIS CURRENT VERSION REQUIRES THE BAF ADDONS. SPECIFICALLY, THE BAF APACHE AND THE BAF SERVICING MODULES</b>
-<br>
-The mission has been changed to add a lot of features, and to help with focusing on the accomodation of:
-1. Smaller player groups
-2. A desire for more of a Combined Arms playstyle
-3. A bit more 'life' in the map
-4. A tougher default enemy
-<br>
-<b>Additions</b>
-<br>
-<b>Butts Board</b> - A TV monitor object has been added to the base that the Officer can interact with.
-<br>Features:
-<br>Request a CAS or AT UAV (flying in air, over base)
-<br>Refuel the fuel cargo of the fuel truck
-<br>Request a TOW launcher be added to the unarmed Humvee
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 120% }
+		a:link { so-language: zxx }
+	</style>
+</head>
+<body lang="en-US" dir="ltr">
+<p style="margin-bottom: 0in; line-height: 100%"><font color="#0084d1"><font face="Courier New, monospace"><b>Merged
+with 1.17.3 changes!</b></font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br/>
 
-<b>Butts Submenu on BTC Crate</b> - Some engineer specific functions at the BTC_Object_Create crate
-<br>Features:
-<br>Spawn an autonomous MG, GMG, or Praetor
-<br>A 5 minute repair/rearm option for vehicles that don't support the BAF Servicing menu (RHS stuff)
+</p>
+<p align="center" style="margin-bottom: 0in; line-height: 100%"><font color="#ff00ff"><font face="Courier New, monospace"><font size="5" style="font-size: 18pt"><b>Hearts
+and Butt Stuff</b><font size="3" style="font-size: 12pt"><span style="font-weight: normal">
+</span></font></font></font></font>
+</p>
+<p align="center" style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace"><font size="5" style="font-size: 18pt"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">A
+modification of the Giallustio/Vdauphin mission &ldquo;Hearts and
+Minds&rdquo;.</span></font></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-<b>More FOB Options</b>
-<br>Additional interactions have been added to the FOB flag. You can redeploy to another base, access the arsenal, or teleport home. Note: Teleport home has a cooldown of 10 minutes.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font color="#0084d1"><font face="Courier New, monospace"><b>The
+primary goal of the changes are to:</b></font></font></p>
+<ul>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Accommodate
+	smaller player groups.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">A
+	desire for a more Combined Arms play style.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Tougher
+	default enemy.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font face="Courier New, monospace">More &lsquo;life&rsquo; in the
+	map.</font></p>
+</ul>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-<b>Different Starting Vehicles</b>
-<br>Some vehicles have been changed around, while others have been added.
-<br>Added vehicles: Zodiac Boat, Submarine, RHS Marine boat, M1A2 SEP Tank, A-164 wipeout/A-10D Thunderbolt II
-<br>A couple of of the transport vehicles have been changed.
-<br>Boats are respawnable like the Chinook.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font color="#0084d1"><font face="Courier New, monospace"><b>A
+lot of features have been added to accommodate all of this. Some may
+not be very &lsquo;milsim&rsquo;, but some just make sense (IMO) to
+facilitate involved gameplay.</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
 
-<b>All of the other changes I can remember:</b>
-<br>Base has been moved to the Military area of Altis Airport. Since there are more vehicles, and planes that need a runway, the base has been moved.<br>
-<br>A lightpoint script has been attached to some base objects. This is so that the area is well-lit at night<br>
-<br>Large Trucks (HEMMT) can tow planes and helicopters: There are situations that a wreck is inaccessible because a helicopter would crash into surroundings. This lets a HEMMT move these vehicles around, or Taxi them.<br>
-<br>More civilians will spawn in cities, to hopefully offset performance cost, one of their waypoints have been removed<br>
-<br>Asking for reputation will display the numerical rep value as well. This is important because....<br>
-<br><b>Triggers have been added that will fail the mission if the rep value is -500</b>. This is to prevent people from just going hog wild, and the consequences for low rep in original mission didn't seem severe enough.<br>
-<br>The default faction is IRAN<br>
-<br>Some modules have been added or changed: ACE pointing distance increased to 30m, ACE_hearing all but disabled.<br>
-<br>Medical Center added to Base: This upgrades medical training of everyone, so that people can be medevaced to base for triage- essentially, regular soldiers can use bloodbags on each other to recover from a mission.<br>
-<br>FOB deployment range has been lowered to 100m in case one wants to deploy an FOB closer to the airfield.
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Courier New, monospace"><a href="#changelist">Click here</a>
+to get to the </font><font face="Courier New, monospace">changelog.</font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br/>
 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font color="#0084d1"><font face="Courier New, monospace"><b>Dependencies:</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Beyond
+the H&amp;M default dependencies, the param.hpp specifies the Islamic
+State (Guer) faction. If you do not have the Project Opfor mod, you
+can change the default faction in Param.hpp.</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font color="#0084d1"><font face="Courier New, monospace"><b>Additions:</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<ol>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace"><font color="#ff00ff"><b>Butts
+	Board</b></font><font color="#ff00ff"> </font>&ndash; A TV monitor
+	object has been added to the base that the Officer can interact
+	with.</font></p>
+	<p style="margin-bottom: 0in; line-height: 100%"></p>
+	<ol type="a">
+		<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Request
+		a CAS or AT UAV that will spawn flying in air over base. <font color="#808080"><i>Note:
+		While an admin can spawn one with the vehicle request, it will not
+		spawn with a &lsquo;crew&rsquo;.  Without this AI &lsquo;crew&rsquo;
+		the vehicle will not be selectable in the UAV terminal. The script
+		I&rsquo;ve added makes it so that it can be controlled with a UAV
+		terminal.</i></font></font></p>
+		<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Refuel
+		the fuel cargo of the fuel truck.</font></p>
+		<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Request
+		a TOW launcher be added to the unarmed Humvee.</font></p>
+		<ol>
+			<ol type="a">
+				<p style="margin-bottom: 0in; line-height: 100%"></p>
+			</ol>
+		</ol>
+	</ol>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace"><font color="#ff00ff"><b>Butts
+	Submenu on BTC Crate</b></font> - Engineer specific functions at the
+	BTC_Object_Create crate.</font></p>
+	<p style="margin-bottom: 0in; line-height: 100%"></p>
+	<ol type="a">
+		<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Spawn
+		an autonomous MG, GMG, or Praetor. <font color="#808080"><i>Note:
+		while a static autonomous turret can be requested from the Require
+		menu, it will not spawn with a &lsquo;crew&rsquo;.  Without this AI
+		&lsquo;crew&rsquo; the vehicle will not be selectable in the UAV
+		terminal. The script I&rsquo;ve added makes it so that it can be
+		controlled with a UAV terminal.</i></font></font></p>
+		<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">5
+		minute &lsquo;automatic&rsquo; repair/rearm/refuel option.</font></p>
+	</ol>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace"><font color="#ff00ff"><b>More
+	FOB Options </b></font><span style="font-weight: normal">&ndash;
+	Additional interactions have been added to the FOB flag.</span></font></p>
+	<p style="margin-bottom: 0in; line-height: 100%"></p>
+	<ol type="a">
+		<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+		<font face="Courier New, monospace">Re-Deploy allows you to
+		redeploy to any other FOB.</font></p>
+		<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+		<font face="Courier New, monospace">Go Home allows you to teleport
+		to Home base. <font color="#808080"><i>Note: </i></font><font color="#808080"><i>this
+		option has a global cooldown of 10 minutes. Its purpose is to allow
+		one person to return to base to acquire transport for the rest of
+		the troops.</i></font></font></p>
+		<li/>
+<p style="margin-bottom: 0in; font-style: normal; font-weight: normal; line-height: 100%">
+		<font color="#000000"><font face="Courier New, monospace">Arsenal
+		at flag.</font></font></p>
+		<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+		</p>
+	</ol>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace"><font color="#ff00ff"><b>M</b></font><font color="#ff00ff"><b>edical
+	Center at base</b></font><span style="font-weight: normal"> &ndash;
+	This upgrades the medical training of everyone inside, so even
+	non-medics can give blood transfusions. </span><span style="font-weight: normal">Also
+	includes a medical crate filled with 10k each of basic medical
+	supplies.</span></font></p>
+	<p style="margin-bottom: 0in; line-height: 100%"></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace"><font color="#ff00ff"><b>Lightpoints
+	added to base objects</b></font><span style="font-weight: normal"> &ndash;
+	Now the area will be well-lit at night.</span></font></p>
+</ol>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<ol start="5">
+	<p style="margin-bottom: 0in; line-height: 100%"></p>
+</ol>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font color="#0084d1"><font face="Courier New, monospace"><b>Changes
+from &lsquo;vanilla&rsquo; Hearts and Minds:</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<ol>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">A
+	boat pier has been added, with the RHS marine boat, Submarine, and
+	Zodiac. All of these are respawnable upon destruction like the
+	Chinook.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">A-164/A-10D
+	Thunderbolt II has been added.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">To
+	accommodate the two above changes, the base has been moved to the
+	&lsquo;Military&rsquo; area of the main airport on Altis.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">M1A2
+	tank has been added.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Transport
+	vehicles have been changed around.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Lightpoint
+	script has been added to base objects so area is well-lit at night.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Large
+	Trucks (such as HEMMT) can tow planes and helicopters.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">More
+	civilians spawn in cities.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">An
+	Interpreter asking for reputation will also get the numerical
+	reputation value as well. This is important because&hellip;</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Triggers
+	have been added that will FAIL the mission if the rep has gone below
+	-500.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Default
+	faction is Project Opfor Islamic State (GUER).</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Basic
+	Medical settings are default in param.hpp.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Basic
+	Medical settings allow epinephrine anywhere.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">FOB
+	deployment range lowered to within 100m of base (2k is default) so
+	you can have easier access to vehicles on nearby runway.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Allow
+	all to defuse is set to default in param.hpp.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Additional
+	safe areas added so that stuff doesn&rsquo;t spawn at base and on
+	runway.</font></p>
+	<li/>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Allow
+	vehicles at caches and missions is set to default in param.hpp</font></p>
+</ol>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><a name="changelist"></a>
+<font color="#0084d1"><font face="Courier New, monospace">Change List</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font color="#ff00ff"><font face="Courier New, monospace"><b>Changes
+with current version:</b></font></font></p>
+<ol>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font face="Courier New, monospace">BAF Dependencies removed (Apache
+	Helicopter, BAF Rearm)</font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font face="Courier New, monospace">Mighty Gau 8 Dependency removed
+	(not common for modsets)</font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font face="Courier New, monospace">CUP dependency removed</font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font face="Courier New, monospace">Param.hpp default rearm is full
+	vehicle</font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font face="Courier New, monospace">Blue Force Tracking module added
+	(updated every 60 seconds)</font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font face="Courier New, monospace">Nametags and ACE Pointing
+	changed to 20 meters</font></p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	</p>
+</ol>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Previous
+versions:</font></p>
+</body>
+</html>
