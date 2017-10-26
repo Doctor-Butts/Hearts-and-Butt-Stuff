@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15119.631,23.867712,17238.285};
-		dir[]={-0.73717606,-0.55253524,0.38895556};
-		up[]={-0.4887422,0.83344531,0.25787547};
-		aside[]={0.46665815,-4.7555659e-007,0.88444203};
+		pos[]={15523.912,347.19153,17097.609};
+		dir[]={-0.51876527,-0.74284887,0.42316639};
+		up[]={-0.57566744,0.66940123,0.46958354};
+		aside[]={0.63209689,-2.91795e-007,0.77489483};
 	};
 };
 binarizationWanted=0;
@@ -11131,11 +11131,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={15382.583,21.506313,17232.037};
+				position[]={15382.583,21.506012,17232.037};
 			};
 			id=651;
 			type="ACE_ModuleBlueForceTracking";
-			atlOffset=3.5883007;
+			atlOffset=3.5879993;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -11153,7 +11153,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=60;
+							value=30;
 						};
 					};
 				};
