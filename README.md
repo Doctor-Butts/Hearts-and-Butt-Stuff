@@ -1,7 +1,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 120% }
+		a:link { so-language: zxx }
+	</style>
 </head>
 <body lang="en-US" dir="ltr">
 <p style="margin-bottom: 0in; line-height: 100%"><font color="#0084d1"><font face="Courier New, monospace"><b>Merged
@@ -14,9 +20,10 @@ with 1.17.3 changes!</b></font></font></p>
 and Butt Stuff</b><font size="3" style="font-size: 12pt"><span style="font-weight: normal">
 </span></font></font></font></font>
 </p>
-<p align="center" style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace"><font size="5" style="font-size: 18pt"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">A
+<p align="center" style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Courier New, monospace"><font size="3" style="font-size: 12pt">A
 modification of the Giallustio/Vdauphin mission &ldquo;Hearts and
-Minds&rdquo;.</span></font></font></font></p>
+Minds&rdquo;.</font></font></p>
 <p style="margin-bottom: 0in; line-height: 100%"><br/>
 
 </p>
@@ -56,9 +63,11 @@ to get to the </font><font face="Courier New, monospace">changelog.</font></p>
 </p>
 <p style="margin-bottom: 0in; line-height: 100%"><font color="#0084d1"><font face="Courier New, monospace"><b>Dependencies:</b></font></font></p>
 <p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Beyond
-the H&amp;M default dependencies, the param.hpp specifies the Islamic
-State (Guer) faction. If you do not have the Project Opfor mod, you
-can change the default faction in Param.hpp.</font></p>
+the H&amp;M default dependencies (ACE, RHS), this version requires
+Task Force Radio (TFAR) from <a href="http://radio.task-force.ru/en/">http://radio.task-force.ru/en/</a>.
+Also, the param.hpp specifies the Islamic State (Guer) faction. If
+you do not have the Project Opfor mod, you can change the default
+faction in Param.hpp.</font></p>
 <p style="margin-bottom: 0in; line-height: 100%"><br/>
 
 </p>
@@ -119,7 +128,8 @@ can change the default faction in Param.hpp.</font></p>
 <p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace"><font color="#ff00ff"><b>More
 	FOB Options </b></font><span style="font-weight: normal">&ndash;
 	Additional interactions have been added to the FOB flag.</span></font></p>
-	<p style="margin-bottom: 0in; line-height: 100%"></p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	</p>
 	<ol type="a">
 		<li/>
 <p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
@@ -129,9 +139,9 @@ can change the default faction in Param.hpp.</font></p>
 <p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
 		<font face="Courier New, monospace">Go Home allows you to teleport
 		to Home base. <font color="#808080"><i>Note: </i></font><font color="#808080"><i>this
-		option has a global cooldown of 10 minutes. Its purpose is to allow
-		one person to return to base to acquire transport for the rest of
-		the troops.</i></font></font></p>
+		option has a global cooldown of </i></font><font color="#808080"><i>2</i></font><font color="#808080"><i>0
+		minutes. Its purpose is to allow one person to return to base to
+		acquire transport for the rest of the troops.</i></font></font></p>
 		<li/>
 <p style="margin-bottom: 0in; font-style: normal; font-weight: normal; line-height: 100%">
 		<font color="#000000"><font face="Courier New, monospace">Arsenal
@@ -146,7 +156,8 @@ can change the default faction in Param.hpp.</font></p>
 	non-medics can give blood transfusions. </span><span style="font-weight: normal">Also
 	includes a medical crate filled with 10k each of basic medical
 	supplies.</span></font></p>
-	<p style="margin-bottom: 0in; line-height: 100%"></p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	</p>
 	<li/>
 <p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace"><font color="#ff00ff"><b>Lightpoints
 	added to base objects</b></font><span style="font-weight: normal"> &ndash;
@@ -156,7 +167,8 @@ can change the default faction in Param.hpp.</font></p>
 
 </p>
 <ol start="5">
-	<p style="margin-bottom: 0in; line-height: 100%"></p>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	</p>
 </ol>
 <p style="margin-bottom: 0in; line-height: 100%"><br/>
 
@@ -273,8 +285,39 @@ from &lsquo;vanilla&rsquo; Hearts and Minds:</b></font></font></p>
 <p style="margin-bottom: 0in; line-height: 100%"><br/>
 
 </p>
-<p style="margin-bottom: 0in; line-height: 100%"><font color="#ff00ff"><font face="Courier New, monospace"><b>Changes
-with current version:</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace"><b><font color="#ff00ff">Changes
+with current version:</font></b></font></p>
+<ol>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font color="#000000"><font face="Courier New, monospace">All FOBs
+	should spawn as a TFAR communication relay range of 10km (untested).</font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font color="#000000"><font face="Courier New, monospace">Replace
+	TOW and Refuel Fuel Truck scripts no longer look for btc_veh_x, they
+	simply look for closest vehicle type (B_Truck_01_fuel_F,
+	rhsusf_m1025_d).</font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font color="#000000"><font face="Courier New, monospace">Teleport
+	cooldown is now 20 minutes.</font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font color="#000000"><font face="Courier New, monospace">Removed
+	unused Air Service point marker.</font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	<font color="#000000"><font face="Courier New, monospace">Took add
+	Tow script onload from pad_lights.sqf and put the code into the TOW
+	launchers init in mission.sqm.</font></font></p>
+</ol>
+<ol>
+	<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+	</p>
+</ol>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Previous
+version changes:</font></p>
 <ol>
 	<li/>
 <p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
@@ -295,14 +338,9 @@ with current version:</b></font></font></p>
 <p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
 	<font face="Courier New, monospace">Blue Force Tracking module added
 	(updated every 60 seconds)</font></p>
-	<li/>
-<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
-	<font face="Courier New, monospace">Nametags and ACE Pointing
-	changed to 20 meters</font></p>
-	<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
-	</p>
 </ol>
-<p style="margin-bottom: 0in; line-height: 100%"><font face="Courier New, monospace">Previous
-versions:</font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Courier New, monospace">Nametags and ACE Pointing changed
+to 20 meters</font></p>
 </body>
 </html>
