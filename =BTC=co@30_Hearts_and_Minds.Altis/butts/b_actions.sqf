@@ -44,3 +44,6 @@ _baction = ["butts_praetor", "Spawn Praetor", "\A3\ui_f\data\igui\cfg\simpleTask
 // ensures that praetor can be placed
 _baction = ["Place", "Place", "\A3\ui_f\data\map\markers\military\end_CA.paa", {(_this select 0) spawn btc_fnc_log_place}, {!btc_log_placing}] call ace_interact_menu_fnc_createAction;
 {["B_AAA_System_01_F", 0, ["ACE_MainActions","Butts"], _baction] call ace_interact_menu_fnc_addActionToClass;
+
+//finally, this makes all FOBs a retransmitter for TFAR
+[btc_fob_flag,10000] call TFAR_antennas_fnc_initRadioTower;
