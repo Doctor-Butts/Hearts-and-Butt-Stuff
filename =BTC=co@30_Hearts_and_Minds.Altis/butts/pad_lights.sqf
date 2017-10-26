@@ -43,6 +43,3 @@ little_point_light setLightBrightness 0.5;
 little_point_light setLightAmbient [0.937, 0.176, 0.773];
 little_point_light setLightColor [0.937, 0.176, 0.773];
 little_point_light lightAttachObject [little_helipad, [0,0,0]];
-
-
-bad_tow attachto [btc_veh_4, [0,-0.5,1]];
