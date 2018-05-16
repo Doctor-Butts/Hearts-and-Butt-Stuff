@@ -1031,7 +1031,7 @@
     <Package name="Conversations">
         <Container name="Conversations: Info">
             <Key ID="STR_BTC_HAM_CON_INFO_ASKREP_NOINTER">
-                <Original>I can't understand what is saying</Original>
+                <Original>(I don't speak his language)</Original>
                 <German>Ich verstehe nicht was Sie sagen</German>
             </Key>
             <Key ID="STR_BTC_HAM_CON_INFO_ASKREP_HIDEOUTS">
